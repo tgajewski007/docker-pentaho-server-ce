@@ -10,4 +10,5 @@ RUN wget -nv -O pentaho-server-ce.zip https://sourceforge.net/projects/pentaho/f
     unzip pentaho-server-ce.zip > /dev/null 2>&1 && \
     rm pentaho-server-ce.zip && \
     chmod +x /run.sh
+COPY startup.sh /home/pentaho/pentaho-server/tomcat/bin
 ENTRYPOINT /run.sh
