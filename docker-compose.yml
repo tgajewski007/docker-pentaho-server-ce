@@ -5,8 +5,7 @@ services:
         container_name: pentaho-server-ce
         environment:
             TZ: Europe/Warsaw
-            DI_HOME: /home/pentaho/pentaho-server/pentaho-solutions/system/kettle
-            CATALINA_OPTS: "-Xms4096m -Xmx6144m -XX:MaxPermSize=256m -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dpentaho.installed.licenses.file=$PENTAHO_INSTALLED_LICENSE_PATH -DDI_HOME=$DI_HOME"
+            CATALINA_OPTS: "-Xms4096m -Xmx6144m -XX:MaxPermSize=256m -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dpentaho.installed.licenses.file=/home/pentaho/pentaho-server/licenses -DDI_HOME=/home/pentaho/pentaho-server/pentaho-solutions/system/kettle"
         ports:
           - '8080:8080'
         restart: always
