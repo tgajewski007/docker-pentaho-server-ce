@@ -1,0 +1,14 @@
+version: '3'
+services:
+    server:
+        build: .
+        container_name: pentaho-server-ce
+        environment:
+            TZ: Europe/Warsaw
+        ports:
+          - '8080:8080'
+        restart: always
+        networks:
+            - pentaho-network
+networks:
+    pentaho-network:
