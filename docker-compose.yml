@@ -23,7 +23,7 @@ services:
       MYSQL_ROOT_PASSWORD: 1
       TZ: Europe/Warsaw
     ports:
-    - 3306:3306
+    - 13306:3306
     networks:
     - pentaho-network
 networks:
