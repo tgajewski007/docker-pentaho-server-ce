@@ -1,16 +1,33 @@
 version: '3'
 services:
-    server:
-        build: .
-        container_name: pentaho-server-ce
-        environment:
-            TZ: Europe/Warsaw
-            DI_HOME: /home/pentaho/pentaho-server/pentaho-solutions/system/kettle
-            CATALINA_OPTS: "-Xms4096m -Xmx6144m -XX:MaxPermSize=256m -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dpentaho.installed.licenses.file=/home/pentaho/pentaho-server/licenses -DDI_HOME=/home/pentaho/pentaho-server/pentaho-solutions/system/kettle"
-        ports:
-          - '8080:8080'
-        restart: always
-        networks:
-            - pentaho-network
+  server:
+    build: .
+    container_name: pentaho-server-ce
+    environment:
+      TZ: Europe/Warsaw
+      DI_HOME: /home/pentaho/pentaho-server/pentaho-solutions/system/kettle
+      CATALINA_OPTS: -Xms4096m -Xmx6144m -XX:MaxPermSize=256m -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dpentaho.installed.licenses.file=/home/pentaho/pentaho-server/licenses -DDI_HOME=/home/pentaho/pentaho-server/pentaho-solutions/system/kettle
+    ports:
+    - 8080:8080
+    restart: always
+    networks:
+    - pentaho-network
+  db:
+    container_name: pentaho-mysql
+    image: mysql:5.7
+    restart: always
+    volumes:
+    - PentahoMysqlData:/var/lib/mysql
+    - PentahoMysqlConf:/etc/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      TZ: Europe/Warsaw
+    ports:
+    - 3306:3306
+    networks:
+    - pentaho-network
 networks:
-    pentaho-network:
+  pentaho-network: null
+volumes:
+  PentahoMysqlData: null
+  PentahoMysqlConf: null
