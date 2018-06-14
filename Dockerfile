@@ -10,9 +10,9 @@ RUN wget -nv -O pentaho-server-ce.zip https://sourceforge.net/projects/pentaho/f
     unzip pentaho-server-ce.zip > /dev/null 2>&1 && \
     rm pentaho-server-ce.zip && \
     chmod +x /run.sh
-# COPY quartz.properties /home/pentaho/pentaho-server/pentaho-solutions/system/quartz 
-# COPY hibernate-settings.xml /home/pentaho/pentaho-server/pentaho-solutions/hibernate
-# COPY mysql5.hibernate.cfg.xml /home/pentaho/pentaho-server/pentaho-solutions/hibernate
-# COPY audit_sql.xml /home/pentaho/pentaho-server/pentaho-solutions/system
-# COPY repository.xml /home/pentaho/pentaho-server/pentaho-solutions/system/jackrabbit
+COPY quartz.properties /home/pentaho/pentaho-server/pentaho-solutions/system/quartz/quartz.properties
+COPY hibernate-settings.xml /home/pentaho/pentaho-server/pentaho-solutions/system/hibernate/hibernate-settings.xml
+COPY mysql5.hibernate.cfg.xml /home/pentaho/pentaho-server/pentaho-solutions/system/hibernate/mysql5.hibernate.cfg.xml
+COPY audit_sql.xml /home/pentaho/pentaho-server/pentaho-solutions/system/audit_sql.xml
+COPY repository.xml /home/pentaho/pentaho-server/pentaho-solutions/system/jackrabbit/repository.xml
 ENTRYPOINT /run.sh
