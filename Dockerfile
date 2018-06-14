@@ -15,4 +15,5 @@ COPY hibernate-settings.xml /home/pentaho/pentaho-server/pentaho-solutions/syste
 COPY mysql5.hibernate.cfg.xml /home/pentaho/pentaho-server/pentaho-solutions/system/hibernate/mysql5.hibernate.cfg.xml
 COPY audit_sql.xml /home/pentaho/pentaho-server/pentaho-solutions/system/audit_sql.xml
 COPY repository.xml /home/pentaho/pentaho-server/pentaho-solutions/system/jackrabbit/repository.xml
+COPY context.xml /home/pentaho/pentaho-server/tomcat/webapps/pentaho/META-INF/context.xml
 ENTRYPOINT /run.sh
