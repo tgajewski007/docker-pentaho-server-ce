@@ -5,8 +5,8 @@ This docker image consists of **Pentaho Server Community Edition (CE) version 8.
 The following is an example on how you may use this image.  
   
 ## Step 1: Deploy the Pentaho Server CE container
-> git clone https://github.com/tgajewski007/docker-pentaho-server-ce.git
-cd docker-pentaho-server-ce
+> git clone https://github.com/tgajewski007/docker-pentaho-server-ce.git \
+cd docker-pentaho-server-ce \
 docker-compose up -d 
   
 ## Step 2: Access the Pentaho Server CE
