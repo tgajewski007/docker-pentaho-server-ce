@@ -9,7 +9,11 @@ The following is an example on how you may use this image.
 cd docker-pentaho-server-ce \
 docker-compose up -d 
   
-## Step 2: Access the Pentaho Server CE
+## Step 2: Init MySQL DB
+in folder data/mysql5 find and run sql script on MySQL DB 
+
+
+## Step 3: Access the Pentaho Server CE
 When the server is started successfully, visit the administration page of Pentaho Server CE
 E.g. http://{dockerhost}:8080/pentaho  
   
